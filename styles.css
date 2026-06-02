@@ -1,0 +1,29 @@
+:root{--accent:#0b74de;--bg:#f7f9fb;--card:#ffffff}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Arial;background:var(--bg);color:#111;margin:0}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:30}
+.brand{font-weight:700}
+#nav-links{display:flex;gap:12px;align-items:center}
+#nav-links a{color:#111;text-decoration:none;padding:8px;border-radius:6px}
+#nav-links a:hover{background:rgba(11,116,222,0.08);color:var(--accent)}
+#nav-toggle{display:none;background:transparent;border:0;font-size:20px}
+.hero{padding:36px 18px;text-align:left}
+.btn{display:inline-block;padding:8px 14px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+.card{background:var(--card);margin:18px;padding:18px;border-radius:8px;box-shadow:0 1px 4px rgba(16,24,40,0.04)}
+main{max-width:900px;margin:24px auto;padding:0 12px}
+/* Projects list styles */
+.card ul{margin:0;padding-left:18px}
+.card ul li{margin:8px 0}
+.card ul li a{color:var(--accent);text-decoration:none}
+.card ul li a:hover{text-decoration:underline}
+
+@media(min-width:700px){
+  #nav-links{display:flex}
+}
+
+@media(max-width:700px){
+  #nav-links{display:none;flex-direction:column;gap:8px;background:#fff;position:absolute;right:12px;top:56px;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(10,20,40,0.08);min-width:200px}
+  #nav-toggle{display:block}
+  #nav-links.open{display:flex}
+}
