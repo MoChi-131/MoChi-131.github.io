@@ -6,78 +6,92 @@
   <title>Education — Angie Wong</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .timeline {
+    .timeline-horizontal {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin: 40px 0;
+      overflow-x: auto;
+      padding: 20px 0;
       position: relative;
-      max-width: 800px;
-      margin: 32px auto;
     }
-    .timeline::before {
+    .timeline-horizontal::before {
       content: '';
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
+      left: 0;
+      right: 0;
+      top: 60px;
+      height: 2px;
       background: #0b74de;
+      z-index: 0;
     }
-    .timeline-item {
-      margin-bottom: 32px;
-      width: 48%;
-    }
-    .timeline-item:nth-child(odd) {
-      margin-left: 0;
-      text-align: right;
-      padding-right: 4%;
-    }
-    .timeline-item:nth-child(even) {
-      margin-left: 52%;
-      text-align: left;
-      padding-left: 4%;
-    }
-    .timeline-content {
-      background: #f0f4f8;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .timeline-dot {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 16px;
-      background: #fff;
-      border: 3px solid #0b74de;
-      border-radius: 50%;
-      top: 20px;
+    .timeline-item-horizontal {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      position: relative;
       z-index: 1;
     }
-    .timeline-item h3 {
+    .timeline-logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 12px;
+      background: #fff;
+      border: 2px solid #0b74de;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+    .timeline-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .timeline-label {
+      font-weight: 600;
+      color: #0b74de;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .timeline-period {
+      font-size: 12px;
+      color: #666;
+    }
+    .education-details {
+      margin-top: 48px;
+    }
+    .education-stage {
+      margin-bottom: 32px;
+      padding: 24px;
+      background: #f9fafb;
+      border-left: 4px solid #0b74de;
+      border-radius: 6px;
+    }
+    .education-stage h3 {
       margin-top: 0;
       color: #0b74de;
     }
-    .timeline-item .period {
-      font-size: 12px;
-      color: #666;
+    .degree {
       font-weight: 600;
+      color: #111;
+      margin: 12px 0 8px 0;
     }
-    .logo {
-      font-size: 32px;
-      margin-bottom: 8px;
+    .courses {
+      background: #fff;
+      padding: 12px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 14px;
     }
     @media(max-width:700px){
-      .timeline::before {
-        left: 20px;
+      .timeline-horizontal {
+        flex-wrap: wrap;
       }
-      .timeline-item {
-        width: 100%;
-        margin-left: 0 !important;
-        padding-left: 60px !important;
-        padding-right: 0 !important;
-        text-align: left !important;
-      }
-      .timeline-dot {
-        left: 20px;
+      .timeline-item-horizontal {
+        min-width: 150px;
       }
     }
   </style>
@@ -95,68 +109,91 @@
 
   <main>
     <section class="card">
-      <h1>Education</h1>
-      <p>A journey through computer science and engineering, from Hong Kong to the UK.</p>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="logo">🎓</div>
-            <h3>University College London</h3>
-            <p class="period">09/2025 – Current | London, UK</p>
-            <p><strong>Master of Software Systems Engineering</strong></p>
-            <p><strong>Courses:</strong> Requirements & System Architecture, Information Retrieval & Data Mining, Validation and Verification</p>
+      <h1>Education Timeline</h1>
+      
+      <div class="timeline-horizontal">
+        <div class="timeline-item-horizontal">
+          <div class="timeline-logo">
+            <img src="https://www.ucl.ac.uk/ucl-logo.svg" alt="UCL" style="filter:brightness(0.5);">
           </div>
+          <div class="timeline-label">UCL</div>
+          <div class="timeline-period">09/2025 – Current</div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="logo">🏫</div>
-            <h3>Cardiff University</h3>
-            <p class="period">09/2022 – 07/2025 | Cardiff, UK</p>
-            <p><strong>Bachelor of Computer Science</strong></p>
-            <p><strong>Classification:</strong> First Class Honours</p>
-            <p><strong>Highlighted Courses:</strong></p>
-            <ul>
-              <li>Computational Robotics (83%)</li>
-              <li>Informatics (82%)</li>
-              <li>Large-Scale Databases (81%)</li>
-            </ul>
-            <p><strong>Role:</strong> HK Society – Event Director (2023–24)</p>
+        
+        <div class="timeline-item-horizontal">
+          <div class="timeline-logo">
+            <img src="https://www.cardiff.ac.uk/__data/assets/image_file/0003/53316/logo-new.png" alt="Cardiff">
           </div>
+          <div class="timeline-label">Cardiff</div>
+          <div class="timeline-period">09/2022 – 07/2025</div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="logo">⚡</div>
-            <h3>City University of Hong Kong</h3>
-            <p class="period">08/2021 – 07/2022 | Hong Kong</p>
-            <p><strong>Bachelor of Electrical Engineering (Year 1)</strong></p>
+        
+        <div class="timeline-item-horizontal">
+          <div class="timeline-logo">
+            <img src="https://www.cityu.edu.hk/images/logo.png" alt="CityU">
           </div>
+          <div class="timeline-label">CityU HK</div>
+          <div class="timeline-period">08/2021 – 07/2022</div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="logo">✨</div>
-            <h3>Sacred Heart Canossian College</h3>
-            <p class="period">09/2015 – 08/2021 | Hong Kong</p>
-            <p><strong>Secondary Education</strong></p>
-          </div>
+        
+        <div class="timeline-item-horizontal">
+          <div class="timeline-logo" style="font-size:32px;">🏫</div>
+          <div class="timeline-label">Sacred Heart</div>
+          <div class="timeline-period">09/2015 – 08/2021</div>
         </div>
       </div>
-    </section>
 
-    <section class="card">
+      <h2 style="margin-top:48px;">Detailed Education History</h2>
+
+      <div class="education-details">
+        <div class="education-stage">
+          <h3>University College London (UCL)</h3>
+          <div class="timeline-period">September 2025 – Current | London, UK</div>
+          <div class="degree">Master of Software Systems Engineering</div>
+          <p>Advanced coursework in modern software engineering practices and distributed systems.</p>
+          <div class="courses">
+            <strong>Key Courses:</strong><br>
+            • Requirements & System Architecture<br>
+            • Information Retrieval & Data Mining<br>
+            • Validation and Verification
+          </div>
+        </div>
+
+        <div class="education-stage">
+          <h3>Cardiff University</h3>
+          <div class="timeline-period">September 2022 – July 2025 | Cardiff, UK</div>
+          <div class="degree">Bachelor of Computer Science — First Class Honours</div>
+          <p>Strong foundation in computer science with focus on systems, databases, and practical engineering.</p>
+          <div class="courses">
+            <strong>Highlighted Courses & Grades:</strong><br>
+            • Computational Robotics — 83%<br>
+            • Informatics — 82%<br>
+            • Large-Scale Databases — 81%
+          </div>
+          <p><strong>Role:</strong> HK Society Event Director (2023–24) — Organized and led cultural events for Hong Kong students.</p>
+        </div>
+
+        <div class="education-stage">
+          <h3>City University of Hong Kong</h3>
+          <div class="timeline-period">August 2021 – July 2022 | Hong Kong</div>
+          <div class="degree">Bachelor of Electrical Engineering (Year 1)</div>
+          <p>Foundational coursework in electrical engineering before transitioning to computer science.</p>
+        </div>
+
+        <div class="education-stage">
+          <h3>Sacred Heart Canossian College</h3>
+          <div class="timeline-period">September 2015 – August 2021 | Hong Kong</div>
+          <div class="degree">Secondary Education</div>
+          <p>Completed secondary education with focus on STEM subjects and extracurricular achievements.</p>
+        </div>
+      </div>
+
       <h2>Awards & Achievements</h2>
       <ul>
-        <li>Champion - HK MTR STEM Challenge</li>
-        <li>Winner - CUHK STEM Robotics Competition</li>
-        <li>Level 1 Korean Certification — Ewha Womans University</li>
-        <li>First Class Honours in Computer Science from Cardiff University</li>
+        <li><strong>Champion</strong> — HK MTR STEM Challenge</li>
+        <li><strong>Winner</strong> — CUHK STEM Robotics Competition</li>
+        <li><strong>Level 1 Certification</strong> — Korean Course (Ewha Womans University)</li>
+        <li><strong>First Class Honours</strong> — Cardiff University Bachelor of Computer Science</li>
       </ul>
     </section>
   </main>
