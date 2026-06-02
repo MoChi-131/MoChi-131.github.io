@@ -5,6 +5,82 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Education — Angie Wong</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 32px auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: #0b74de;
+    }
+    .timeline-item {
+      margin-bottom: 32px;
+      width: 48%;
+    }
+    .timeline-item:nth-child(odd) {
+      margin-left: 0;
+      text-align: right;
+      padding-right: 4%;
+    }
+    .timeline-item:nth-child(even) {
+      margin-left: 52%;
+      text-align: left;
+      padding-left: 4%;
+    }
+    .timeline-content {
+      background: #f0f4f8;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border: 3px solid #0b74de;
+      border-radius: 50%;
+      top: 20px;
+      z-index: 1;
+    }
+    .timeline-item h3 {
+      margin-top: 0;
+      color: #0b74de;
+    }
+    .timeline-item .period {
+      font-size: 12px;
+      color: #666;
+      font-weight: 600;
+    }
+    .logo {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    @media(max-width:700px){
+      .timeline::before {
+        left: 20px;
+      }
+      .timeline-item {
+        width: 100%;
+        margin-left: 0 !important;
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+      }
+      .timeline-dot {
+        left: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="nav">
@@ -20,21 +96,67 @@
   <main>
     <section class="card">
       <h1>Education</h1>
-      <p><strong>MSc Software Systems Engineering</strong> — University College London (UCL)</p>
-      <p><strong>BSc Computer Science</strong> — Cardiff University</p>
+      <p>A journey through computer science and engineering, from Hong Kong to the UK.</p>
 
-      <h2>Roles</h2>
-      <ul>
-        <li>Project contributor and web developer for coursework and personal projects.</li>
-        <li>Engineer Assistant (Creaxon) — data validation and hardware testing.</li>
-        <li>Part-time administrative roles supporting client communications and finance.</li>
-      </ul>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="logo">🎓</div>
+            <h3>University College London</h3>
+            <p class="period">09/2025 – Current | London, UK</p>
+            <p><strong>Master of Software Systems Engineering</strong></p>
+            <p><strong>Courses:</strong> Requirements & System Architecture, Information Retrieval & Data Mining, Validation and Verification</p>
+          </div>
+        </div>
 
-      <h2>Competitions & Awards</h2>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="logo">🏫</div>
+            <h3>Cardiff University</h3>
+            <p class="period">09/2022 – 07/2025 | Cardiff, UK</p>
+            <p><strong>Bachelor of Computer Science</strong></p>
+            <p><strong>Classification:</strong> First Class Honours</p>
+            <p><strong>Highlighted Courses:</strong></p>
+            <ul>
+              <li>Computational Robotics (83%)</li>
+              <li>Informatics (82%)</li>
+              <li>Large-Scale Databases (81%)</li>
+            </ul>
+            <p><strong>Role:</strong> HK Society – Event Director (2023–24)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="logo">⚡</div>
+            <h3>City University of Hong Kong</h3>
+            <p class="period">08/2021 – 07/2022 | Hong Kong</p>
+            <p><strong>Bachelor of Electrical Engineering (Year 1)</strong></p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="logo">✨</div>
+            <h3>Sacred Heart Canossian College</h3>
+            <p class="period">09/2015 – 08/2021 | Hong Kong</p>
+            <p><strong>Secondary Education</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Awards & Achievements</h2>
       <ul>
         <li>Champion - HK MTR STEM Challenge</li>
         <li>Winner - CUHK STEM Robotics Competition</li>
         <li>Level 1 Korean Certification — Ewha Womans University</li>
+        <li>First Class Honours in Computer Science from Cardiff University</li>
       </ul>
     </section>
   </main>
