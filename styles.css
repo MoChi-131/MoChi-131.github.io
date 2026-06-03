@@ -10,6 +10,8 @@ h1,h2,h3,h4,h5,h6{margin:1.2rem 0 0.6rem;line-height:1.2}
 #nav-links{display:flex;gap:12px;align-items:center}
 #nav-links a{color:#111;text-decoration:none;padding:8px 10px;border-radius:8px}
 #nav-links a:hover{background:rgba(11,116,222,0.08);color:var(--accent)}
+#nav-links a.active{background:var(--accent);color:#fff;font-weight:700}
+#nav-links a.active:hover{background:rgba(11,116,222,0.96);}
 #nav-toggle{display:none;background:transparent;border:0;font-size:24px;cursor:pointer}
 .hero{padding:40px 20px;text-align:left}
 .btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600}

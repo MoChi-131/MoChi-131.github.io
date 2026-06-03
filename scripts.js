@@ -16,6 +16,20 @@ if(navToggle && navLinks){
     });
   });
 
+  // Highlight the current page in the nav
+  const normalizePath = path => path.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
+  const currentPath = normalizePath(window.location.pathname);
+  Array.from(navLinks.querySelectorAll('a')).forEach(a=>{
+    const href = a.getAttribute('href');
+    if(!href) return;
+    const linkUrl = new URL(href, window.location.origin + window.location.pathname);
+    const linkPath = normalizePath(linkUrl.pathname);
+    if(linkPath === currentPath){
+      a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
+    }
+  });
+
   // Smooth scroll for internal links (optional fallback if CSS not supported)
   Array.from(document.querySelectorAll('a[href^="#"]')).forEach(anchor=>{
     anchor.addEventListener('click', function(e){
