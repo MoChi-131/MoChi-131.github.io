@@ -23,10 +23,16 @@ footer{padding:18px 18px;text-align:center;font-size:.95rem;color:#555}
 .job-card{padding:24px 0;border-top:1px solid #edf1f7}
 .job-card:first-child{border-top:none}
 .job-card__header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}
+.job-card__brand{display:flex;align-items:flex-start;gap:16px}
+.job-card__logo{width:110px;height:auto;flex-shrink:0;border-radius:6px;object-fit:contain}
+.job-card__logo.bloomberg-logo{width:180px;}
+.job-card__title-row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px;width:100%;}
 .job-card__header h3{margin:0;font-size:1.08rem;letter-spacing:0.01em}
-.job-card__company{margin:6px 0 0;color:#5a6678;font-size:0.95rem}
+.job-card__company{margin:6px 0 0.4rem;color:#5a6678;font-size:0.95rem}
+.job-card__summary{margin:0;line-height:1.75;color:#111;font-size:0.95rem}
 .job-card__meta{display:flex;flex-wrap:wrap;gap:10px;color:#6b7280;font-size:0.95rem}
 .job-card__meta span{background:#f3f6fb;padding:6px 10px;border-radius:999px}
+.job-card__tags{margin-top:1.75rem}
 .job-card__tags p{margin:0.75rem 0 0 0;color:#334155;line-height:1.6}
 .job-card__tags .highlight{color:#111;font-weight:700;background:none;padding:0}
 .card ul{margin:0;padding-left:20px}
